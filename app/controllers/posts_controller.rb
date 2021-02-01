@@ -3,10 +3,10 @@ class PostsController < ApplicationController
   before_action :set_post, only: %i[show edit update destroy]
 
   def index
+     @posts = Post.order(id: :asc)
   end
 
   def show
-    @post = Post.find(params[:id])
   end
 
   def new
@@ -18,7 +18,7 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to @post, notice: "投稿しました"
     else
-      flash[:alert] = "投稿に失敗しました"
+      flash.now[:alert] = "投稿に失敗しました"
       render :new
     end 
   end
