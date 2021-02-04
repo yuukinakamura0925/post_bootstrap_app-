@@ -55,6 +55,7 @@ td {
   @extend .alert-danger;
 }
 
+// テキストエリア
 input,
 textarea {
   @extend .is-invalid;
