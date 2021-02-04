@@ -54,3 +54,8 @@ td {
 .alert-alert {
   @extend .alert-danger;
 }
+
+input,
+textarea {
+  @extend .is-invalid;
+}
